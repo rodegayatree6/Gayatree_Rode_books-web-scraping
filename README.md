@@ -1,22 +1,23 @@
-import requests
-from bs4 import BeautifulSoup
-import pandas as pd
+# Books Web Scraping Project
 
-url = "https://books.toscrape.com/"
-soup = BeautifulSoup(requests.get(url).text, "html.parser")
+This project scrapes book data from https://books.toscrape.com using Python.
 
-data = []
+## Extracted Fields
+- Title
+- Price
+- Rating
 
-for book in soup.select("article.product_pod"):
-    title = book.h3.a["title"]
-    price = book.select_one(".price_color").text
-    rating = book.select_one(".star-rating")["class"][1]
+## Technologies Used
+- Python
+- Requests
+- BeautifulSoup
+- Pandas
 
-    data.append([title, price, rating])
+## Output Formats
+- CSV
+- Excel
+- JSON
 
-df = pd.DataFrame(data, columns=["Title","Price","Rating"])
-
-# remove any duplicates just in case
-df = df.drop_duplicates()
-
-print(df)
+## Author
+Guided by Vivek Nikam  
+Task under CodeSpyder
