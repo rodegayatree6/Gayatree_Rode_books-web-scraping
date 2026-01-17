@@ -15,8 +15,7 @@ This project scrapes book data from https://books.toscrape.com using Python.
 
 ## Output Formats
 - CSV
-- Excel
-- JSON
+
 
 ## Author
 Guided by Vivek Nikam  
